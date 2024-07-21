@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROCK-PAPER-SCISSORS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="title">ROCK<br />PAPER<br />SCISSORS</div>
+      <div class="scores">
+        <div class="score-box">
+          <div class="scoreDisplay">COMPUTER SCORE
+            <div id="computerScoreDisplay">0</div>
+          </div>
+        </div>
+        <div class="score-box">
+          <div class="scoreDisplay">YOUR <br />SCORE
+            <div id="playerScoreDisplay">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="btn-container">
+        <div class="triangle"></div>
+        <div class="triangle1"></div>
+        <button class="choices top-left" value="rock"></button>
+        <button class="choices top-right" value="scissors"></button>
+        <button class="choices bottom" value="paper"></button>
+      </div>
+
+      <div class="resultDisplay">
+        <div class="pickedDispaly">
+          <div class="player">YOU PICKED</div>
+          <div class="computer">PC PICKED</div>
+        </div>
+        <div class="pickedResult">
+          <div class="playerPickedResultBox">
+            <div class="playerPickedResult"></div>
+            <div id="playerAmimation">
+              <span id="playerSpan" style="--i: 1;"></span>
+              <span id="playerSpan" style="--i: 2;"></span>
+              <span id="playerSpan" style="--i: 3;"></span>
+            </div>
+          </div>
+          <div class="gameResult">
+            <div class="playerWinningStatus"></div>
+            <div class="againstPc">AGAINST PC</div>
+            <button class="playAgain">Play Again</button>
+          </div>
+          <div class="pcPickedResultBox">
+            <div class="pcPickedResult"></div>
+            <div id="pcAmimation">
+              <span id="pcSpan" style="--i: 1;"></span>
+              <span id="pcSpan" style="--i: 2;"></span>
+              <span id="pcSpan" style="--i: 3;"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <button class="rulesButton">RULES</button>
+      <button class="nextButton">NEXT</button>
+    </div>
+    <div id="popupDiv">
+      <button class="closeBtn">&times;</button>
+      <h3>Game Rules</h3>
+      <div class="rule-box">
+        <div class="rule-info">
+          <div class="square"></div>
+          <div>
+            Rock beats scissors, scissors beat paper, and paper beats rock.
+          </div>
+        </div>
+        <div class="rule-info">
+          <div class="square"></div>
+          <div>
+            Agree ahead of time whether you’ll count off “rock, paper,
+            scissors, shoot” or just “rock, paper, scissors.”
+          </div>
+        </div>
+        <div class="rule-info">
+          <div class="square"></div>
+          <div>
+            Use rock, paper, scissors to settle minor decisions or simply
+            play to pass the time
+          </div>
+        </div>
+        <div class="rule-info">
+          <div class="square"></div>
+          <div>
+            If both players lay down the same hand, each player lays down
+            another hand
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="script.js"></script>
+
+</html

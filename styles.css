@@ -1,0 +1,431 @@
+* {
+  margin: 0px;
+}
+
+:root {
+  --rock: url(assets/rock.png);
+  --paper: url(assets/paper.png);
+  --scissors: url(assets/scissor.png);
+  --bgc: #8cc461;
+  --bx1: #ffa943;
+  --bx2: #bd00ff;
+  --bx3: #0074b6;
+}
+body {
+  background: #8cc461;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  background-color: #8cc461;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 800px;
+  height: 200px;
+  border-radius: 13px;
+  border: 3px solid #fff;
+  margin-top: 74px;
+  box-sizing: border-box;
+}
+.title {
+  width: 135px;
+  height: 37px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 46.88px;
+  letter-spacing: 0.1em;
+  font-family: monospace;
+  display: flex;
+  align-items: center;
+}
+.scores {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.score-box {
+  width: 139px;
+  height: 128px;
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 9px;
+  text-align: center;
+}
+.scoreDisplay {
+  margin: 0;
+  font-size: 18px;
+  font-family: monospace;
+  font-weight: 600;
+  line-height: 19.92px;
+  letter-spacing: 0.1em;
+  color: #656565;
+}
+#computerScoreDisplay,
+#playerScoreDisplay {
+  margin: auto;
+  width: 79px;
+  height: 63px;
+  font-family: monospace;
+  font-size: 68px;
+  font-weight: 700;
+  line-height: 79.69px;
+  color: #252525;
+}
+
+.btn-container {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-top: 346.4px solid rgba(0, 0, 0, 0.64);
+  position: relative;
+}
+
+.triangle1 {
+  bottom: 174px;
+  right: 240px;
+  align-self: center;
+  width: 0;
+  height: 0;
+  border-left: 160px solid transparent;
+  border-right: 160px solid transparent;
+  border-top: 277.12px solid #8cc461;
+  position: absolute;
+}
+
+.top-left {
+  background: var(--rock) no-repeat center;
+  border: 16px solid #0074b6;
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  top: 162px;
+  left: 172px;
+}
+
+.top-right {
+  background: var(--scissors) no-repeat center;
+  border: 16px solid var(--bx2);
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  right: 172px;
+  top: 162px;
+}
+
+.bottom {
+  background: var(--paper) no-repeat center;
+  border: 16px solid var(--bx1);
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  bottom: 120px;
+}
+
+.playerPickedResult,
+.pcPickedResult {
+  width: 160px;
+  height: 160px;
+  background-color: white !important;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.resultDisplay {
+  display: none;
+  flex-direction: column;
+  margin-top: 150px;
+}
+
+#nextButton {
+  background: #8cc461;
+  color: white;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 155px;
+  width: 119px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  font-family: monospace;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 24.61px;
+  letter-spacing: 0.1em;
+  display: none;
+}
+
+/* Style for the close button */
+.closeBtn {
+  position: absolute;
+  top: -30px;
+  right: -16px;
+  background-color: red;
+  font-family: Dangrek;
+  font-size: 30px;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 50px;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ffffff;
+  padding-bottom: revert-layer;
+}
+#popupDiv h3 {
+  width: 181px;
+  height: 42px;
+  font-family: monospace;
+  font-size: 29px;
+  font-weight: 500;
+  line-height: 33.98px;
+  margin: auto;
+  margin-top: 20px;
+}
+.rule-box {
+  margin-left: 6px;
+  box-sizing: border-box;
+  width: 261px;
+}
+.rule-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.square {
+  width: 12px;
+  height: 8px;
+  background-color: #ffd600;
+  margin-right: 10px;
+}
+
+/* Style for the button */
+#toggleButton {
+  background: #8cc461;
+  color: white;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 119px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  font-family: monospace;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 24.61px;
+  letter-spacing: 0.1em;
+}
+
+/* Style for the pop-up div */
+#popupDiv {
+  display: none;
+  position: fixed;
+  bottom: 82px;
+  right: 20px;
+  background: #004429;
+  border: 7px solid #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  animation: slideDown 0.5s forwards;
+  width: 282px;
+  height: 352px;
+  border-radius: 13px;
+  color: white;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.pickedDispaly {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding-left: 32px;
+  padding-right: 44px;
+  margin-bottom: 22px;
+
+  .player {
+    display: flex;
+    font-family: Roboto;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 19.92px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: white;
+  }
+  .computer {
+    display: flex;
+    font-family: Roboto;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 19.92px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: white;
+  }
+}
+
+.pickedResult {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 200px;
+  position: relative;
+}
+.gameResult {
+  width: 272px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+}
+
+.playerWinningStatus {
+  font-family: Roboto;
+  font-size: 39px;
+  font-weight: 800;
+  line-height: 45.7px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+.againstPc {
+  font-family: Roboto;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 29.3px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+.playAgain {
+  width: 174px;
+  height: 44px;
+  border-radius: 6px;
+  color: #6b6b6b;
+  font-size: 18px;
+  border: 0px solid;
+  font-weight: 600;
+}
+
+.playerPickedResultBox #playerSpan {
+  position: absolute;
+  top: 0%;
+  left: -1%;
+  width: 150px;
+  height: 150px;
+  border: 28px solid green;
+  background-color: green;
+  border-radius: inherit;
+  opacity: 0.8;
+  border-radius: 50%;
+}
+
+.pcPickedResultBox #pcSpan {
+  position: absolute;
+  top: 0%;
+  right: -1%;
+  width: 150px;
+  height: 150px;
+  border: 28px solid green;
+  background-color: green;
+  border-radius: inherit;
+  opacity: 0.8;
+  border-radius: 50%;
+}
+
+.playerPickedResultBox.animate #playerSpan {
+  animation: pulseanimation 4s ease-out infinite;
+  animation-delay: calc(0.5s * var(--i));
+}
+
+.pcPickedResultBox.animate #pcSpan {
+  animation: pulseanimation 4s ease-out infinite;
+  animation-delay: calc(0.5s * var(--i));
+}
+@keyframes pulseanimation {
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+.container {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  height: 50px;
+  display: flex;
+  width: inherit;
+  justify-content: end;
+  padding-right: 20px;
+  margin-bottom: 20px;
+  position: fixed;
+  bottom: 0;
+}
+
+.rulesButton,
+.nextButton {
+  width: 152px;
+  height: 50px;
+  border-radius: 10px;
+  border: 4px solid white;
+  background: #8cc461;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+.rulesButton {
+  margin-right: 12px;
+}
+.nextButton {
+  display: none;
+}
